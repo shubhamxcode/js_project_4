@@ -25,14 +25,14 @@ function validguess(sher){
     if (isNaN(sher)) {
         alert('please give a valid number');
     } else if(sher<1){
-        alert('please give a valid number between 1 to 100');
+        // alert('please give a valid number between 1 to 100');
     }else if(sher>100){
-        alert('please give a valid number between 1 to 100');
+        // alert('please give a valid number between 1 to 100');
     }else{
         prevguess.push(sher)
         if (numberguess>10) {
             cleanguess(sher)
-            displaymessage(`game over.Random number was${random}`)
+            displaymessage(`game over:Random number was${random}`)
             endgame()
         }else{
           cleanguess(sher)
@@ -53,8 +53,8 @@ function checkguess(guess){
 function cleanguess(animal){
     userinput.value='';
     prevousguess.innerHTML+=`${animal} `
+    guessesremaining.innerHTML=`${11-numberguess}` 
     numberguess++;
-    guessesremaining.innerHTML=`${10-numberguess}` 
 }
 function displaymessage(message){
     lowOrHi.innerHTML=`<h2>${message}</h2>`
